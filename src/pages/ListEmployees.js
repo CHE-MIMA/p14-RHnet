@@ -6,7 +6,7 @@ const ListEmployees = () => {
         <div>
             <body>
                 <div id="employee-div" className="container">
-                    <h3>Current Employees</h3>
+                    <h1>Current Employees</h1>
                     <table id="employee-table" className="display"></table>
                     <NavLink className="main-nav" to="/home">Home</NavLink>
                 </div>
