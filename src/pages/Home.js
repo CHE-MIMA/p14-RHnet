@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/App.css'
+import DatePick from '../components/DatePick';
+import Modal from '../components/Modal';
 
 const Home = () => {
+    // const navigate = useNavigate();
+    const [openModal, setOpenModal] = useState();
+
+    const closeModalOnClick = () => {
+        setOpenModal(false);
+
+    };
     return (
         <div>
             <body>
@@ -12,18 +21,19 @@ const Home = () => {
                 <div className="container">
                     <NavLink className="main-nav" to="/listEmployees">View Current Employees</NavLink>
                     <h2>Create Employee</h2>
+
+
                     <form id="create-employee">
                         <label htmlFor="first-name">First Name</label>
                         <input type="text" id="first-name" name='firstName' />
 
                         <label htmlFor="last-name">Last Name</label>
                         <input type="text" id="last-name" name='lastName' />
+                        <label id="date-of-birth">Date of Birth</label>
+                        <DatePick />
 
-                        <label htmlFor="date-of-birth">Date of Birth</label>
-                        <input id="date-of-birth" type="text" name='birthday' />
-
-                        <label htmlFor="start-date">Start Date</label>
-                        <input id="start-date" type="text" name='dateStart' />
+                        <label id="start-date">Start Date</label>
+                        <DatePick />
 
                         <fieldset className="address">
                             <legend>Address</legend>
@@ -52,9 +62,12 @@ const Home = () => {
                         </select>
 
                     </form>
-                    <button onclick="saveEmployee()">Save</button>
+                    <button onClick={() => setOpenModal(true)} >Save</button>
+                    <Modal open={openModal} openModal={openModal}
+                        closeModal={closeModalOnClick}
+
+                    />
                 </div>
-                <div id="confirmation" className="modal">Employee Created!</div>
             </body>
         </div>
     );
