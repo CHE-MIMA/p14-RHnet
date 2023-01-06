@@ -1,0 +1,1 @@
+export const addEmployeeSelector = (state) => (state.employeeReducer)

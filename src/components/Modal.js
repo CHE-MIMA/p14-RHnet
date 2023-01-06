@@ -5,13 +5,9 @@ const Modal = ({ openModal, closeModal }) => {
         return (
             <div className="modal-container">
                 <div className="modal-content">
-                    <button className="close-modal" onClick={closeModal}>
-                        x
-                    </button>
+                    <button className="close-modal" onClick={closeModal}>x</button>
                 </div>
                 <h2 className="title-modal">Employee Created !</h2>
-
-
             </div>
         );
     }

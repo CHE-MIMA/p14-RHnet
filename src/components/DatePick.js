@@ -11,6 +11,7 @@ const DatePick = () => {
     setStartDate(startDate);
 
   }
+
   return (
     <DatePicker
       isClearable
