@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
-import DatePick from './DatePick';
+import DatePickBirth from './DatePickBirth';
 import Modal from './Modal';
-import CostumSelect from './CostumSelect';
 import SelectStates from './SelectStates';
 import '../styles/App.css'
 import { useNavigate } from 'react-router-dom';
-// import { useDispatch } from "react-redux";
-// import { addEmployee } from '../feature/employeeSlice';
+import { departments } from '../departments';
+import { useDispatch } from "react-redux";
+import { addEmployee } from '../feature/employeeSlice';
 import { NavLink } from 'react-router-dom';
+import DatePickStart from './DatePickStart';
+import DepartmentSelect from './DepartmentSelect';
+import { states } from "../states"
+
+
 const Saveform = () => {
     // const navigate = useNavigate();
     const [openModal, setOpenModal] = useState();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    // const [dateOfBirth, setDateOfBirth] = useState(new Date());
-    // const [startDate, setStartDate] = useState(new Date());
+    const [dateOfBirth, setDateOfBirth] = useState(new Date());
+    const [startDate, setStartDate] = useState(new Date());
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
     const [zipCode, setZipcode] = useState("");
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+    // get departments
+    const valueDepartment = { value: departments[0], label: departments[0] };
+    const [department, setDepartment] = useState(valueDepartment);
+    //
+    // get states
+    const valueState = { value: states[0], label: states[0] };
+    const [state, setState] = useState(valueState);
+    //
 
     const closeModalOnClick = () => {
         setOpenModal(false);
@@ -27,28 +40,30 @@ const Saveform = () => {
     }
 
 
-    // const saveData = (e) => {
-    //     e.preventDefault();
-    //     const employeeData = {
-    //         firstName: firstName,
-    //         lastName: lastName,
-    //         // dateOfBirth: dateOfBirth,
-    //         // startDate: startDate,
-    //         street: street,
-    //         city: city,
-    //         zipCode: zipCode,
-    //     };
-    //     console.log(employeeData);
-    //     // dispatch(addEmployee(employeeData));
-    //     // setOpenModal(true);
-    // };
+    const handleSubmitSaveData = (e) => {
+        e.preventDefault();
+        // const employeeData = {
+        //     firstName: firstName,
+        //     lastName: lastName,
+        //     dateOfBirth: dateOfBirth,
+        //     startDate: startDate,
+        //     street: street,
+        //     city: city,
+        //     zipCode: zipCode,
+        //     department: department,
+        //     state: state,
+        // };
+        // console.log(employeeData);
+        dispatch(addEmployee());
+        setOpenModal(true);
+    };
 
     return (
         <div className="container">
             <NavLink className="main-nav" to="/listEmployees">View Current Employees</NavLink>
             <h2 className='titleEm'>Create Employee</h2>
-            <form id="create-employee">
-                {/* onSubmit={saveData} */}
+            <form onSubmit={handleSubmitSaveData} id="create-employee">
+                {/* onSubmit={handleSubmitSaveData} */}
 
                 <label htmlFor="first-name">First Name</label>
                 <input type="text" id="first-name" name='firstName' onChange={(e) => setFirstName(e.target.value)}
@@ -58,14 +73,13 @@ const Saveform = () => {
                     onChange={(e) => setLastName(e.target.value)}
                     value={lastName} />
                 <label id="date-of-birth">Date of Birth</label>
-                <DatePick />
-                {/* // onChange={(e) => setDateOfBirth(e.target.value)}
-                    // value={dateOfBirth} /> */}
+                <DatePickBirth getDateOfBirth={setDateOfBirth} />
+
+
 
                 <label id="start-date">Start Date</label>
-                <DatePick />
-                {/* onChange={(e) => setStartDate(e.target.value)}
-                    value={startDate} /> */}
+                <DatePickStart getDateOfStart={setStartDate} />
+
 
                 <fieldset className="address">
                     <legend>Address</legend>
@@ -81,7 +95,7 @@ const Saveform = () => {
                         value={city} />
 
                     <label htmlFor="state">State</label>
-                    <SelectStates />
+                    <SelectStates getState={setState} />
 
                     <label htmlFor="zip-code">Zip Code</label>
                     <input id="zip-code" type="number"
@@ -90,9 +104,9 @@ const Saveform = () => {
                 </fieldset>
 
                 <label htmlFor="department">Department</label>
-                <CostumSelect />
+                <DepartmentSelect getDepartment={setDepartment} />
             </form>
-            <button type='submit' className='saveBtn' onClick={(e) => setOpenModal(true)} >Save</button>
+            <button type='submit' className='saveBtn' onClick={(e) => setOpenModal(true)}>Save</button>
             <Modal openModal={openModal}
                 closeModal={closeModalOnClick} />
         </div>

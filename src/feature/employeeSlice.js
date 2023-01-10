@@ -16,13 +16,13 @@ export const employeeSlice = createSlice({
             const employee = {
                 firstName: action.payload.firstName,
                 lastName: action.payload.lastName,
-                // dateOfBirth: action.payload.dateOfBirth,
-                // startDate: action.payload.startDate,
+                dateOfBirth: action.payload.dateOfBirth,
+                startDate: action.payload.startDate,
                 street: action.payload.street,
                 city: action.payload.city,
-                // state: action.payload.state,
+                state: action.payload.state,
                 zipCode: action.payload.zipCode,
-                //     department: action.payload.department,
+                department: action.payload.department,
             };
             state.push(employee);
         },

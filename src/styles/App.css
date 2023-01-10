@@ -8,6 +8,28 @@ html {
     background-color:#d8d6d6;
     font-size: 18px;
   }
+  .modal-container{
+    width: 90%;
+    height: 100px;
+    border-radius: 5px;
+    background-color: #021528; 
+
+  }
+  .close-modal{
+text-align: end;
+font-size: 30px;
+font-weight: 500;
+margin-top: 0px;
+margin-right: 20px;
+color: white;
+cursor: pointer;
+  }
+  .title-modal{
+    text-align: center;
+    color: white;
+    margin-top: -20px;
+    font-size: 22px;
+  }
 .title {
     display: flex;
     align-items: center;

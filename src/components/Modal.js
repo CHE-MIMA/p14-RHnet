@@ -5,7 +5,7 @@ const Modal = ({ openModal, closeModal }) => {
         return (
             <div className="modal-container">
                 <div className="modal-content">
-                    <button className="close-modal" onClick={closeModal}>x</button>
+                    <p className="close-modal" onClick={closeModal}>x</p>
                 </div>
                 <h2 className="title-modal">Employee Created !</h2>
             </div>

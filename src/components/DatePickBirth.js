@@ -4,27 +4,32 @@ import DatePicker from "react-datepicker";
 import '../styles/App.css'
 import 'react-datepicker/dist/react-datepicker.css'
 
-const DatePick = () => {
-  const [startDate, setStartDate] = useState(new Date());
+const DatePickBirth = ({ getDateOfBirth }) => {
+  const [dateBirth, setDateBirth] = useState(new Date());
 
-  const handleDateChange = (startDate) => {
-    setStartDate(startDate);
 
+  const handleDateChange = (e) => {
+    setDateBirth(e);
+    getDateOfBirth(e)
   }
 
   return (
+
+
     <DatePicker
+
       isClearable
-      selected={startDate}
+      selected={dateBirth}
       onChange={(startDate) => handleDateChange(startDate)}
       showMonthDropdown
       showYearDropdown
+      dateFormat="dd/MM/yyyy"
       dropdownMode="select"
     />
   );
 };
 
-export default DatePick
+export default DatePickBirth
 // const DatePick = () => {
 //   const [startDate, setStartDate] = useState(new Date());
 //   let date = new Date();
