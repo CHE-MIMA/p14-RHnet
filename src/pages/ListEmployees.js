@@ -5,14 +5,14 @@ import '../styles/App.css'
 const ListEmployees = () => {
     return (
         <div>
-            <body>
-                <Header />
-                <div id="employee-div" className="container">
-                    <h1 className='titleEm'>Current Employees</h1>
-                    <table id="employee-table" className="display"></table>
-                    <NavLink className="main-nav" to="/home">Home</NavLink>
-                </div>
-            </body>
+
+            <Header />
+            <div id="employee-div" className="container">
+                <h1 className='titleEm'>Current Employees</h1>
+                <table id="employee-table" className="display"></table>
+                <NavLink className="main-nav" to="/home">Home</NavLink>
+            </div>
+
         </div>
     );
 };

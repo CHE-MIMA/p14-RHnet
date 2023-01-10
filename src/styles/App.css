@@ -6,9 +6,9 @@ html {
   }
   body{
     background-color:#d8d6d6;
+    font-size: 18px;
   }
 .title {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,12 +17,9 @@ html {
     color: rgb(98, 128, 0);
 }
 
-body{
-    font-size: 18px;
-}
 .titleEm{
     
-font-size: 25px;
+font-size: 22px;
 color: rgb(29, 28, 28);
 
 }
