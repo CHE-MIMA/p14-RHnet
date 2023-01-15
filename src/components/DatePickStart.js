@@ -11,6 +11,7 @@ const DatePickStart = ({ getDateOfStart }) => {
     const handleDateChange = (e) => {
         setDateStart(e);
         getDateOfStart(e)
+
     }
 
     return (

@@ -60,8 +60,10 @@ color: rgb(29, 28, 28);
    color: rgb(44, 44, 187);
    margin-top: -10px;
    font-weight: 600;
-  
-
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 10px;
 }
 .header{
     background-color: #d8d6d6;
@@ -72,8 +74,8 @@ color: rgb(29, 28, 28);
 }
 
 img{
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 120px;
     margin-top: 20px;
   
 }
@@ -85,6 +87,10 @@ img{
     height: 40px;
     background-color: rgb(98, 128, 0);
 border-radius: 10px;
+margin-left: 40%;
+}
+.searchBar{
+display: flex;
 }
 input{
     border-radius: 5px;
@@ -96,6 +102,9 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.search{
+  margin-top: 5px;
 }
 
 label {

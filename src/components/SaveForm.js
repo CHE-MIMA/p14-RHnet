@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import DatePickBirth from './DatePickBirth';
 import Modal from './Modal';
 import SelectStates from './SelectStates';
@@ -14,6 +14,14 @@ import { states } from "../states"
 
 
 const Saveform = () => {
+    // const inputfirstName = useRef();
+    // const inputlastName = useRef();
+    // const inputdateOfBirth = useRef();
+    // const inputstartDate = useRef();
+    // const inputstreet = useRef();
+    // const inputcity = useRef();
+    // const inputzipCode = useRef();
+
     // const navigate = useNavigate();
     const [openModal, setOpenModal] = useState();
     const [firstName, setFirstName] = useState("");
@@ -26,11 +34,11 @@ const Saveform = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     // get departments
-    const valueDepartment = { value: departments[0], label: departments[0] };
+    const valueDepartment = { value: departments[0] };
     const [department, setDepartment] = useState(valueDepartment);
     //
     // get states
-    const valueState = { value: states[0], label: states[0] };
+    const valueState = { value: states[0] };
     const [state, setState] = useState(valueState);
     //
 
@@ -42,19 +50,19 @@ const Saveform = () => {
 
     const handleSubmitSaveData = (e) => {
         e.preventDefault();
-        // const employeeData = {
-        //     firstName: firstName,
-        //     lastName: lastName,
-        //     dateOfBirth: dateOfBirth,
-        //     startDate: startDate,
-        //     street: street,
-        //     city: city,
-        //     zipCode: zipCode,
-        //     department: department,
-        //     state: state,
-        // };
-        // console.log(employeeData);
-        dispatch(addEmployee());
+        const employeeData = {
+            firstName: firstName,
+            lastName: lastName,
+            dateOfBirth: dateOfBirth.toLocaleDateString("en-US"),
+            startDate: startDate.toLocaleDateString("en-US"),
+            street: street,
+            city: city,
+            zipCode: zipCode,
+            department: department,
+            state: state,
+        };
+        console.log(employeeData);
+        dispatch(addEmployee(employeeData));
         setOpenModal(true);
     };
 
@@ -105,8 +113,9 @@ const Saveform = () => {
 
                 <label htmlFor="department">Department</label>
                 <DepartmentSelect getDepartment={setDepartment} />
+                <button type='submit' className='saveBtn' onClick={(e) => setOpenModal(true)}>Save</button>
             </form>
-            <button type='submit' className='saveBtn' onClick={(e) => setOpenModal(true)}>Save</button>
+
             <Modal openModal={openModal}
                 closeModal={closeModalOnClick} />
         </div>

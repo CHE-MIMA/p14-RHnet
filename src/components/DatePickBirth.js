@@ -20,10 +20,10 @@ const DatePickBirth = ({ getDateOfBirth }) => {
 
       isClearable
       selected={dateBirth}
-      onChange={(startDate) => handleDateChange(startDate)}
+      onChange={(e) => handleDateChange(e)}
       showMonthDropdown
       showYearDropdown
-      dateFormat="dd/MM/yyyy"
+      dateFormat="MM/dd/yyyy"
       dropdownMode="select"
     />
   );
