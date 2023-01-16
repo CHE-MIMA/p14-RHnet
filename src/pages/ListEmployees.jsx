@@ -40,24 +40,24 @@ const ListEmployees = () => {
         //     sortable: true,
         //     reorder: true,
         // },
-        // {
-        //     name: "Street",
-        //     selector: (row) => row.street,
-        //     sortable: true,
-        //     reorder: true,
-        // },
+        {
+            name: "Street",
+            selector: (row) => row.street,
+            sortable: true,
+            reorder: true,
+        },
         {
             name: "City",
             selector: (row) => row.city,
             sortable: true,
             reorder: true,
         },
-        {
-            name: "State",
-            selector: (row) => row.state,
-            sortable: true,
-            reorder: true,
-        },
+        // {
+        //     name: "State",
+        //     selector: (row) => row.state,
+        //     sortable: true,
+        //     reorder: true,
+        // },
         {
             name: "Zip Code",
             selector: (row) => row.zipCode,
@@ -66,7 +66,7 @@ const ListEmployees = () => {
         },
     ];
     
-  const [filterText, setFilterText] = useState("");
+//   const [filterText, setFilterText] = useState("");
 //   const filteredEmployee = employee.filter(
 //     (item) =>
 //       (item.firstName &&
@@ -92,7 +92,7 @@ const ListEmployees = () => {
             <Header />
         <div id="employee-div" className="container">
                 <h1 className='titleEm'>Current Employees</h1><br />
-               <Search onfilter={(e) => setFilterText(e.target.value)} filterText={filterText}/>
+               {/* <Search onfilter={(e) => setFilterText(e.target.value)} filterText={filterText}/> */}
         </div>
 
         <div className="datatable-container">
