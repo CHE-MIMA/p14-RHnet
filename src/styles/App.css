@@ -134,7 +134,21 @@ input{
   font-size: 20px;
   font-weight: 600;
 }
+.ErrorP{
+  font-size: 28px;
+  margin-top: 120px;
+  color: red;
+}
+.ErrorLink{
+  font-size: 18px;
+  margin-top: 120px;
+  margin-bottom: -5px;
 
+}
+p{
+  align-items: center;
+  text-align: center;
+}
 label {
     display: block;
     margin-top: 1rem;
