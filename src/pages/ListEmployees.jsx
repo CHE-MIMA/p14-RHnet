@@ -96,7 +96,7 @@ const ListEmployees = () => {
           pagination
         />
       </div>
-      <NavLink className="main-nav" to="/home">Home</NavLink>
+      <NavLink className="main-nav" to="/">Home</NavLink>
         </div>
     );
 };
