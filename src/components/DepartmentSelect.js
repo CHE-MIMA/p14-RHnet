@@ -20,7 +20,7 @@ const DepartmentSelect = ({ getDepartment }) => {
                 options={departments} onChange={handleOnChange}
                 value={selectDepartment}
                 styles={colorStyles}
-                placeholder="select departement" />
+                placeholder="Sales" />
         </div>
     );
 };

@@ -15,7 +15,7 @@ const SelectStates = ({ getState }) => {
     }
     return (
         <div>
-            <Select placeholder="select state"
+            <Select placeholder="Alabama"
                 options={states} onChange={handleOnChange}
                 styles={colorStyles}
                 value={selectState} />

@@ -110,6 +110,11 @@ input{
     margin:  0 3rem;
 
 }
+.errorForm{
+  font-size: 20px;
+  color: red;
+  font-weight: 600;
+}
 /* .sc-jrcTuL{
   font-size: 1.2rem;
 } */
@@ -125,6 +130,9 @@ input{
 }
 .search{
   margin-top: 5px;
+  color:#042447;  
+  font-size: 20px;
+  font-weight: 600;
 }
 
 label {

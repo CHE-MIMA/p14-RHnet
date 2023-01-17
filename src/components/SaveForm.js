@@ -10,7 +10,8 @@ import { addEmployee } from '../feature/employeeSlice';
 import { NavLink } from 'react-router-dom';
 import DatePickStart from './DatePickStart';
 import DepartmentSelect from './DepartmentSelect';
-import { states } from "../states"
+import { states } from "../states";
+
 
 
 const Saveform = () => {
@@ -23,6 +24,7 @@ const Saveform = () => {
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
     const [zipCode, setZipcode] = useState("");
+    const [errorForm, setErrorForm] = useState(null);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     // get departments
@@ -53,10 +55,21 @@ const Saveform = () => {
             department: department.value,
             state: state.value,
         };
-        console.log(department);
-        console.log(employeeData);
-        dispatch(addEmployee(employeeData));
-        setOpenModal(true);
+        if (
+            firstName.length < 2 ||
+            lastName.length < 2 ||
+            street.length === 0 ||
+            city.length === 0 ||
+            zipCode.length < 1
+        ) {
+            setErrorForm("Error Form. Try again !");
+        } else {
+            console.log(employeeData);
+            dispatch(addEmployee(employeeData));
+            setErrorForm(null);
+            setOpenModal(true);
+        }
+
     };
 
     return (
@@ -104,6 +117,7 @@ const Saveform = () => {
 
                 <label htmlFor="department">Department</label>
                 <DepartmentSelect getDepartment={setDepartment} />
+                <p className='errorForm'>{errorForm}</p>
                 <button type='submit' className='saveBtn'>Save</button>
             </form>
 
