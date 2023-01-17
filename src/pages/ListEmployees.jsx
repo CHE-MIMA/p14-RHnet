@@ -7,7 +7,20 @@ import { useSelector } from 'react-redux';
 import Search from '../components/Search';
 const ListEmployees = () => {
     const employee = useSelector((state) => state.employee);
-    console.log(employee)
+    // console.log(employee)
+    const [filterText, setFilterText] = useState("");
+  const searchedEmployee = employee.filter(
+    (item) =>
+      (item.firstName.toLowerCase().includes(filterText.toLowerCase())) ||
+      ( item.lastName.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.dateOfBirth.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.startDate.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.street.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.city.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.state.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.zipCode.includes(filterText)) ||
+      (item.department.toLowerCase().includes(filterText.toLowerCase()))
+  );
 
     const columns = [
         {
@@ -66,24 +79,20 @@ const ListEmployees = () => {
         },
     ];
     
-  const [filterText, setFilterText] = useState("");
-//   const filteredEmployee = employee.filter(
-//     (item) =>
-//       (item.firstName &&
-//         item.firstName.toLowerCase().includes(filterText.toLowerCase()))
+  
 
     return (
         <div>
             <Header />
         <div id="employee-div" className="container">
                 <h1 className='titleEm'>Current Employees</h1><br />
-               {/* <Search onfilter={(e) => setFilterText(e.target.value)} filterText={filterText}/> */}
+               <Search onfilter={(e) => setFilterText(e.target.value)} filterText={filterText}/>
         </div>
 
         <div className="datatable-container">
         <DataTable
           columns={columns}
-          data= {employee}
+          data= {searchedEmployee}
           pagination
         />
       </div>
