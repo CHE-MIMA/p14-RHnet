@@ -7,7 +7,7 @@ const Error = () => {
              <Header />
              <p className='ErrorP'> Hoops! the page you are looking for does not exist</p>
              <p className='ErrorLink'>back to home page</p>
-             <NavLink className="main-nav" to="/home">Home</NavLink>
+             <NavLink className="main-nav" to="/">Home</NavLink>
         </div>
     );
 };
