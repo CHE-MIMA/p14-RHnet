@@ -6,7 +6,7 @@ const DepartmentSelect = ({ getDepartment }) => {
     const colorStyles = {
         control: (styles) => ({ ...styles, border: "solid rgb(98, 128, 0) 2px" })
     }
-    const [selectDepartment, setSelectDepartment] = useState(departments[0]);
+    const [selectDepartment, setSelectDepartment] = useState(departments[0].value);
     // const handleChange = (selectedOption) => { console.log("handleChange", selectedOption) }
     function handleOnChange(e) {
         setSelectDepartment(e);
@@ -16,10 +16,11 @@ const DepartmentSelect = ({ getDepartment }) => {
     return (
 
         <div>
-            <Select defaultInputValue="Sales"
+            <Select
                 options={departments} onChange={handleOnChange}
                 value={selectDepartment}
-                styles={colorStyles} />
+                styles={colorStyles}
+                placeholder="select departement" />
         </div>
     );
 };

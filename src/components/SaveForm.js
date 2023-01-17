@@ -15,14 +15,6 @@ import { states } from "../states"
 
 const Saveform = () => {
     // const inputfirstName = useRef();
-    // const inputlastName = useRef();
-    // const inputdateOfBirth = useRef();
-    // const inputstartDate = useRef();
-    // const inputstreet = useRef();
-    // const inputcity = useRef();
-    // const inputzipCode = useRef();
-
-    // const navigate = useNavigate();
     const [openModal, setOpenModal] = useState();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -34,11 +26,11 @@ const Saveform = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     // get departments
-    const valueDepartment = { value: departments[0] };
+    const valueDepartment = { value: departments[0].value };
     const [department, setDepartment] = useState(valueDepartment);
     //
     // get states
-    const valueState = { value: states[0] };
+    const valueState = { value: states[0].value };
     const [state, setState] = useState(valueState);
     //
 
@@ -58,9 +50,10 @@ const Saveform = () => {
             street: street,
             city: city,
             zipCode: zipCode,
-            department: department,
-            state: state,
+            department: department.value,
+            state: state.value,
         };
+        console.log(department);
         console.log(employeeData);
         dispatch(addEmployee(employeeData));
         setOpenModal(true);
@@ -71,8 +64,6 @@ const Saveform = () => {
             <NavLink className="main-nav" to="/listEmployees">View Current Employees</NavLink>
             <h2 className='titleEm'>Create Employee</h2>
             <form onSubmit={handleSubmitSaveData} id="create-employee">
-                {/* onSubmit={handleSubmitSaveData} */}
-
                 <label htmlFor="first-name">First Name</label>
                 <input type="text" id="first-name" name='firstName' onChange={(e) => setFirstName(e.target.value)}
                     value={firstName} />
@@ -113,11 +104,12 @@ const Saveform = () => {
 
                 <label htmlFor="department">Department</label>
                 <DepartmentSelect getDepartment={setDepartment} />
-                <button type='submit' className='saveBtn' onClick={(e) => setOpenModal(true)}>Save</button>
+                <button type='submit' className='saveBtn'>Save</button>
             </form>
 
             <Modal openModal={openModal}
                 closeModal={closeModalOnClick} />
+
         </div>
 
     );

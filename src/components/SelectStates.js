@@ -6,7 +6,7 @@ const SelectStates = ({ getState }) => {
     const colorStyles = {
         control: (styles) => ({ ...styles, border: "solid rgb(98, 128, 0) 2px" })
     }
-    const [selectState, setSelectState] = useState(states[0]);
+    const [selectState, setSelectState] = useState(states[0].value);
     // const handleChange = (selectedOption) => { console.log("handleChange", selectedOption) }
     function handleOnChange(e) {
         setSelectState(e);
@@ -15,7 +15,7 @@ const SelectStates = ({ getState }) => {
     }
     return (
         <div>
-            <Select defaultInputValue="Alabama"
+            <Select placeholder="select state"
                 options={states} onChange={handleOnChange}
                 styles={colorStyles}
                 value={selectState} />

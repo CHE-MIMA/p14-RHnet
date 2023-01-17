@@ -11,8 +11,6 @@ export const employeeSlice = createSlice({
             // addEmployee: (state, { payload }) => {
             //     state.employees.push(payload)
             // }
-
-
             const employee = {
                 firstName: action.payload.firstName,
                 lastName: action.payload.lastName,
