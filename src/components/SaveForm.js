@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DatePickBirth from './DatePickBirth';
-import Modal from 'plugin-react-component-modal';
+import Modal from '../components/Modal';
 import SelectStates from './SelectStates';
 import '../styles/App.css'
 import { useNavigate } from 'react-router-dom';
@@ -118,7 +118,9 @@ const Saveform = () => {
                 <label htmlFor="department">Department</label>
                 <DepartmentSelect getDepartment={setDepartment} />
                 <p className='errorForm'>{errorForm}</p>
-                <button type='submit' className='saveBtn'>Save</button>
+                <div className='Btn'>
+                    <button type='submit' className='saveBtn'>Save</button>
+                </div>
             </form>
 
             <Modal openModal={openModal}

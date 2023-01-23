@@ -7,6 +7,7 @@ const Home = () => {
     return (
         <div>
 
+
             <Header />
             <div className="title">
                 <h1>HRnet</h1>

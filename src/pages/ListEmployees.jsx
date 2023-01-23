@@ -84,6 +84,9 @@ const ListEmployees = () => {
     return (
         <div>
             <Header />
+            <div className="title">
+                <h1>HRnet</h1>
+            </div>
         <div id="employee-div" className="container">
                 <h1 className='titleEm'>Current Employees</h1><br />
                <Search onfilter={(e) => setFilterText(e.target.value)} filterText={filterText}/>

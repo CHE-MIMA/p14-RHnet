@@ -8,10 +8,22 @@ html {
     background-color:#d8d6d6;
     font-size: 18px;
   }
-
-  .modal-container{
-    margin-top: -700px;
+  .Btn{
+    text-align: center;
+  }
+  .parent-container{
+    width: 100vw;
+    height: 100vh; 
     position: fixed;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.267);
+  }
+  .modal-container{
+  
+   
     width: 80%;
     height: 80px;
     border-radius: 5px;
@@ -87,11 +99,11 @@ img{
     font-size: 18px;
     color: white;
     margin-top: 20px;
-    width:150px;
+    width: 120px;
     height: 40px;
     background-color: rgb(98, 128, 0);
 border-radius: 10px;
-margin-left: 40%;
+text-align: center;
 }
 .searchBar{
 display: flex;
@@ -115,9 +127,7 @@ input{
   color: red;
   font-weight: 600;
 }
-/* .sc-jrcTuL{
-  font-size: 1.2rem;
-} */
+
 .sc-eDWCr {
   font-size: 1.2rem;
 }
@@ -159,4 +169,49 @@ label {
     border-radius: 5px;
     margin-top: 10px;
     border: solid 2px rgb(98, 128, 0);
+}
+@media (max-width: 759px ) {
+  #create-employee{
+    width: 90%;
+}
+.title {
+ 
+  font-size: 15px;
+  margin-top: -25px;
+}
+
+.titleEm{
+  
+font-size: 18px;
+
+
+}
+label {
+font-size: 17px;
+font-weight: 500;
+}
+img{
+  width: 100px;
+  height: 80px;
+
+}
+.sc-eDWCr {
+  font-size: 0.9rem;
+}
+.errorForm{
+  font-size: 18px;
+}
+.modal-container{
+  margin-top: 00px;
+  height: 70px;
+}
+.close-modal{
+  font-size: 25px;
+  margin-right: 10px;
+
+    }
+    .title-modal{
+      margin-top: -30px;
+      font-size: 20px;
+    }
 }
