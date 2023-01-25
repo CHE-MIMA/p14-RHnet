@@ -21,9 +21,7 @@ html {
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.267);
   }
-  .modal-container{
-  
-   
+  .modal-container{ 
     width: 80%;
     height: 80px;
     border-radius: 5px;
@@ -39,7 +37,7 @@ margin-right: 20px;
 color: white;
 cursor: pointer;
   }
-  .title-modal{
+  .titleModal{
     text-align: center;
     color: white;
     margin-top: -35px;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DatePickBirth from './DatePickBirth';
-import Modal from '../components/Modal';
+import Modal from 'plugin-react-component-modal';
 import SelectStates from './SelectStates';
 import '../styles/App.css'
 import { useNavigate } from 'react-router-dom';
