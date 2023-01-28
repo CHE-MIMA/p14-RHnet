@@ -2,15 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const employeeSlice = createSlice({
     name: "employee",
-    // initialState: {
-    //     employees: null,
-    // },
+
     initialState: [],
     reducers: {
         addEmployee: (state, action) => {
-            // addEmployee: (state, { payload }) => {
-            //     state.employees.push(payload)
-            // }
+
             const employee = {
                 firstName: action.payload.firstName,
                 lastName: action.payload.lastName,

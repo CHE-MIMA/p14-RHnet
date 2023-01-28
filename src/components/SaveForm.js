@@ -15,7 +15,7 @@ import { states } from "../states";
 
 
 const Saveform = () => {
-    // const inputfirstName = useRef();
+
     const [openModal, setOpenModal] = useState();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -124,7 +124,10 @@ const Saveform = () => {
             </form>
 
             <Modal openModal={openModal}
-                closeModal={closeModalOnClick} />
+                closeModal={closeModalOnClick}
+                title={"employé created !"}
+                closeButton={"x"}
+            />
 
         </div>
 

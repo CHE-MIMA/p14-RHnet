@@ -7,7 +7,7 @@ const SelectStates = ({ getState }) => {
         control: (styles) => ({ ...styles, border: "solid rgb(98, 128, 0) 2px" })
     }
     const [selectState, setSelectState] = useState(states[0].value);
-    // const handleChange = (selectedOption) => { console.log("handleChange", selectedOption) }
+
     function handleOnChange(e) {
         setSelectState(e);
         getState(e);
